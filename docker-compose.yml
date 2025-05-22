@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:15
+    container_name: t1_java-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: t1_java
+      POSTGRES_USER: artem
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db-data:
