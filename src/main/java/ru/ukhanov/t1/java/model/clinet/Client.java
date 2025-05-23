@@ -24,6 +24,6 @@ public class Client {
     @Column(name = "last_name")
     private String lastName;
 
-    @Id
+    @Column(name = "client_id")
     private Long clientID;
 }

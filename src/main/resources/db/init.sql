@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS client (
 );
 
 CREATE TABLE IF NOT EXISTS account (
-    id BIGINT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     client_id INTEGER NOT NULL REFERENCES client(id) ON DELETE CASCADE,
     type VARCHAR(10) NOT NULL,
     balance DECIMAL NOT NULL
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS "transaction" (
 );
 
 CREATE TABLE IF NOT EXISTS data_source_error_log (
-    id BIGINT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     stack_trace TEXT NOT NULL,
     message VARCHAR(255) NOT NULL,
     method_signature TEXT NOT NULL
