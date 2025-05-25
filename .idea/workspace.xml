@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c90bee0-737b-437f-86a9-34b96f6249e5" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802/storage_v2/_src_/database/t1_java.5LJcUQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802/storage_v2/_src_/database/t1_java.5LJcUQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/mapper/AccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/mapper/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/mapper/TransactionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/model/clinet/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/model/clinet/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/repository/DataSourceErrorLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/repository/DataSourceErrorLogRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/account/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/account/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,15 +24,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="task-1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,6 +66,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;858b05e407ff926e49b0b3c344bf9037&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -103,7 +100,13 @@
       <workItem from="1747940384568" duration="2586000" />
       <workItem from="1747943008821" duration="395000" />
       <workItem from="1748001678064" duration="4589000" />
-      <workItem from="1748011313304" duration="672000" />
+      <workItem from="1748011313304" duration="3928000" />
+      <workItem from="1748089351688" duration="1407000" />
+      <workItem from="1748091010590" duration="852000" />
+      <workItem from="1748092165819" duration="609000" />
+      <workItem from="1748171248999" duration="177000" />
+      <workItem from="1748175588113" duration="20000" />
+      <workItem from="1748183457849" duration="1019000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1747940713534</created>

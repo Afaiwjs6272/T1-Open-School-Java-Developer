@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>787</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>809</IntrospectionStateNumber>
       <ServerVersion>15.13</ServerVersion>
-      <StartupTime>1748003322</StartupTime>
+      <StartupTime>1748011732</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1401,7 +1409,7 @@ true posixrules
 13209||10|C|G
 13209||-9223372036854775808|U|G
 13209||10|U|G</Grants>
-      <IntrospectionStateNumber>787</IntrospectionStateNumber>
+      <IntrospectionStateNumber>809</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>artem</OwnerName>
     </database>
@@ -4819,7 +4827,7 @@ true posixrules
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>787</IntrospectionStateNumber>
+      <IntrospectionStateNumber>809</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4835,36 +4843,50 @@ true posixrules
     <sequence id="264" parent="262" name="data_source_error_log_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>16509</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <SequenceIdentity>1(9)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>786</StateNumber>
       <OwnerName>artem</OwnerName>
     </sequence>
-    <table id="265" parent="262" name="account">
+    <sequence id="265" parent="262" name="time_limit_exceed_log_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>16553</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>808</StateNumber>
+      <OwnerName>artem</OwnerName>
+    </sequence>
+    <table id="266" parent="262" name="account">
       <ObjectId>16465</ObjectId>
       <StateNumber>772</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>artem</OwnerName>
     </table>
-    <table id="266" parent="262" name="client">
+    <table id="267" parent="262" name="client">
       <ObjectId>16427</ObjectId>
       <StateNumber>759</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>artem</OwnerName>
     </table>
-    <table id="267" parent="262" name="data_source_error_log">
+    <table id="268" parent="262" name="data_source_error_log">
       <ObjectId>16510</ObjectId>
-      <StateNumber>786</StateNumber>
+      <StateNumber>791</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>artem</OwnerName>
     </table>
-    <table id="268" parent="262" name="transaction">
+    <table id="269" parent="262" name="time_limit_exceed_log">
+      <ObjectId>16554</ObjectId>
+      <StateNumber>808</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>artem</OwnerName>
+    </table>
+    <table id="270" parent="262" name="transaction">
       <ObjectId>16410</ObjectId>
       <StateNumber>758</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>artem</OwnerName>
     </table>
-    <column id="269" parent="265" name="id">
+    <column id="271" parent="266" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;account_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4873,28 +4895,28 @@ true posixrules
       <SequenceId>16464</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="270" parent="265" name="client_id">
+    <column id="272" parent="266" name="client_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>772</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="271" parent="265" name="type">
+    <column id="273" parent="266" name="type">
       <DasType>varchar(10)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>769</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="272" parent="265" name="balance">
+    <column id="274" parent="266" name="balance">
       <DasType>numeric(38,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>771</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <foreign-key id="273" parent="265" name="account_client_id_fkey">
+    <foreign-key id="275" parent="266" name="account_client_id_fkey">
       <ColNames>client_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16482</ObjectId>
@@ -4906,7 +4928,7 @@ true posixrules
       <RefTableName>client</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="274" parent="265" name="account_pkey">
+    <index id="276" parent="266" name="account_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16471</ObjectId>
@@ -4915,46 +4937,46 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="275" parent="265" name="account_pkey">
+    <key id="277" parent="266" name="account_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16472</ObjectId>
       <Primary>1</Primary>
       <StateNumber>769</StateNumber>
       <UnderlyingIndexId>16471</UnderlyingIndexId>
     </key>
-    <column id="276" parent="266" name="id">
+    <column id="278" parent="267" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>746</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="277" parent="266" name="last_name">
+    <column id="279" parent="267" name="last_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
       <StateNumber>746</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="278" parent="266" name="first_name">
+    <column id="280" parent="267" name="first_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
       <StateNumber>746</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="279" parent="266" name="middle_name">
+    <column id="281" parent="267" name="middle_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
       <StateNumber>746</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="280" parent="266" name="client_id">
+    <column id="282" parent="267" name="client_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>746</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="281" parent="266" name="client_pkey">
+    <index id="283" parent="267" name="client_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16432</ObjectId>
@@ -4963,7 +4985,7 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="282" parent="266" name="client_client_id_key">
+    <index id="284" parent="267" name="client_client_id_key">
       <ColNames>client_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16434</ObjectId>
@@ -4971,20 +4993,20 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="283" parent="266" name="client_pkey">
+    <key id="285" parent="267" name="client_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16433</ObjectId>
       <Primary>1</Primary>
       <StateNumber>746</StateNumber>
       <UnderlyingIndexId>16432</UnderlyingIndexId>
     </key>
-    <key id="284" parent="266" name="client_client_id_key">
+    <key id="286" parent="267" name="client_client_id_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16435</ObjectId>
       <StateNumber>746</StateNumber>
       <UnderlyingIndexId>16434</UnderlyingIndexId>
     </key>
-    <column id="285" parent="267" name="id">
+    <column id="287" parent="268" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;data_source_error_log_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4993,72 +5015,111 @@ true posixrules
       <SequenceId>16509</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="286" parent="267" name="stack_trace">
+    <column id="288" parent="268" name="stack_trace">
       <DasType>text|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>786</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="287" parent="267" name="message">
+    <column id="289" parent="268" name="message">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="288" parent="267" name="method_signature">
-      <DasType>text|0s</DasType>
+    <column id="290" parent="268" name="method_signature">
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>786</StateNumber>
-      <TypeId>25</TypeId>
+      <StateNumber>791</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <index id="289" parent="267" name="data_source_error_log_pkey">
+    <index id="291" parent="268" name="data_source_error_log_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16516</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>786</StateNumber>
+      <StateNumber>791</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="290" parent="267" name="data_source_error_log_pkey">
+    <key id="292" parent="268" name="data_source_error_log_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16517</ObjectId>
       <Primary>1</Primary>
       <StateNumber>786</StateNumber>
       <UnderlyingIndexId>16516</UnderlyingIndexId>
     </key>
-    <column id="291" parent="268" name="id">
+    <column id="293" parent="269" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;time_limit_exceed_log_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>808</StateNumber>
+      <SequenceId>16553</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="294" parent="269" name="method_signature">
+      <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>808</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="295" parent="269" name="execution_time">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>808</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="296" parent="269" name="time_limit_exceed_log_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16560</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>808</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="297" parent="269" name="time_limit_exceed_log_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16561</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>808</StateNumber>
+      <UnderlyingIndexId>16560</UnderlyingIndexId>
+    </key>
+    <column id="298" parent="270" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>740</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="292" parent="268" name="account_id">
+    <column id="299" parent="270" name="account_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>758</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="293" parent="268" name="transaction_sum">
+    <column id="300" parent="270" name="transaction_sum">
       <DasType>numeric(38,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>757</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="294" parent="268" name="transaction_time">
+    <column id="301" parent="270" name="transaction_time">
       <DasType>timestamp|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>740</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="295" parent="268" name="transaction_pkey">
+    <index id="302" parent="270" name="transaction_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16413</ObjectId>
@@ -5067,7 +5128,7 @@ true posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="296" parent="268" name="transaction_pkey">
+    <key id="303" parent="270" name="transaction_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16414</ObjectId>
       <Primary>1</Primary>
