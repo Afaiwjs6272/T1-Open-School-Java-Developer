@@ -1,12 +1,14 @@
 package ru.ukhanov.t1.java.mapper;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import ru.ukhanov.t1.java.dto.AccountDto;
 import ru.ukhanov.t1.java.exception.ClientNotFoundException;
 import ru.ukhanov.t1.java.model.account.Account;
 import ru.ukhanov.t1.java.model.clinet.Client;
 import ru.ukhanov.t1.java.repository.ClientRepository;
 
+@Component
 @RequiredArgsConstructor
 public class AccountMapper {
     private final ClientRepository clientRepository;

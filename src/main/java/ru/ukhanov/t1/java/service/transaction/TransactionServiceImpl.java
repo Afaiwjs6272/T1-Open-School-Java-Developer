@@ -3,6 +3,8 @@ package ru.ukhanov.t1.java.service.transaction;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.ukhanov.t1.java.aop.annotation.LogDataSourceError;
+import ru.ukhanov.t1.java.aop.annotation.Metric;
 import ru.ukhanov.t1.java.dto.TransactionDto;
 import ru.ukhanov.t1.java.exception.TransactionNotFoundException;
 import ru.ukhanov.t1.java.mapper.TransactionMapper;
@@ -18,6 +20,8 @@ public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
 
+    @LogDataSourceError
+    @Metric
     @Override
     public TransactionDto addTransaction(TransactionDto transactionDto) {
         log.info("Adding new transaction: {}", transactionDto);
@@ -28,6 +32,8 @@ public class TransactionServiceImpl implements TransactionService {
         return result;
     }
 
+    @LogDataSourceError
+    @Metric
     @Override
     public TransactionDto updateTransaction(Long id, TransactionDto transactionDto) {
         log.info("Updating transaction id={}", id);
@@ -55,6 +61,8 @@ public class TransactionServiceImpl implements TransactionService {
         return result;
     }
 
+    @LogDataSourceError
+    @Metric
     @Override
     public TransactionDto getById(Long id) {
         log.debug("Fetching transaction by id={}", id);
@@ -68,6 +76,8 @@ public class TransactionServiceImpl implements TransactionService {
         return result;
     }
 
+    @LogDataSourceError
+    @Metric
     @Override
     public List<TransactionDto> getALl() {
         log.debug("Receiving all transactions");
@@ -78,6 +88,8 @@ public class TransactionServiceImpl implements TransactionService {
         return list;
     }
 
+    @LogDataSourceError
+    @Metric
     @Override
     public void deleteTransaction(Long id) {
         log.info("Deleting transaction id={}", id);
