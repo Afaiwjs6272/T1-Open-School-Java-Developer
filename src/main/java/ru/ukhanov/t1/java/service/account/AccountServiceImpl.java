@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.ukhanov.t1.java.aop.annotation.Cached;
+import ru.ukhanov.t1.java.aop.annotation.LodDatasourceError;
 import ru.ukhanov.t1.java.aop.annotation.LogDataSourceError;
 import ru.ukhanov.t1.java.aop.annotation.Metric;
 import ru.ukhanov.t1.java.dto.AccountDto;
@@ -63,6 +64,7 @@ public class AccountServiceImpl implements AccountService {
         return result;
     }
 
+    @LodDatasourceError
     @LogDataSourceError
     @Metric
     @Cached
