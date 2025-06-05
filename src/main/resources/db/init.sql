@@ -27,3 +27,9 @@ CREATE TABLE IF NOT EXISTS data_source_error_log (
     method_signature TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS time_limit_exceed_log (
+    id BIGSERIAL PRIMARY KEY,
+    method_signature TEXT NOT NULL,
+    execution_time BIGINT NOT NULL
+);
+
