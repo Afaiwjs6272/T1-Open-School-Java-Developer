@@ -67,7 +67,6 @@ public class AccountServiceImpl implements AccountService {
     @LodDatasourceError
     @LogDataSourceError
     @Metric
-    @Cached
     @Override
     public AccountDto getById(Long id) {
         log.debug("Receiving account by id={}", id);

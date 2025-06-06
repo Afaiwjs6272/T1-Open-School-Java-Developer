@@ -2,14 +2,19 @@ package ru.ukhanov.t1.java.service.transaction;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.ukhanov.t1.java.aop.annotation.LogDataSourceError;
 import ru.ukhanov.t1.java.aop.annotation.Metric;
 import ru.ukhanov.t1.java.dto.TransactionDto;
 import ru.ukhanov.t1.java.exception.TransactionNotFoundException;
 import ru.ukhanov.t1.java.mapper.TransactionMapper;
+import ru.ukhanov.t1.java.model.account.Account;
+import ru.ukhanov.t1.java.model.account.enums.AccountStatus;
 import ru.ukhanov.t1.java.model.transaction.Transaction;
+import ru.ukhanov.t1.java.repository.AccountRepository;
 import ru.ukhanov.t1.java.repository.TransactionRepository;
+import ru.ukhanov.t1.java.model.transaction.enums.TransactionStatus;
 
 import java.util.List;
 
@@ -19,17 +24,38 @@ import java.util.List;
 public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
+    private final AccountRepository accountRepository;
+    private ClientBlackList list;
 
-    @LogDataSourceError
-    @Metric
+    @Value("${transactions.reject.limit}")
+    private int limit;
+
+
     @Override
     public TransactionDto addTransaction(TransactionDto transactionDto) {
-        log.info("Adding new transaction: {}", transactionDto);
         Transaction transaction = transactionMapper.toTransaction(transactionDto);
-        Transaction savedTransaction = transactionRepository.save(transaction);
-        TransactionDto result = transactionMapper.toTransactionDto(savedTransaction);
-        log.info("Transaction saved with id={}", savedTransaction.getId());
-        return result;
+        Account account = transaction.getAccount();
+
+        if (account.getStatus() == null || account.getStatus() == AccountStatus.OPEN) {
+            boolean isBlacklisted = list.isClientBlacklisted(account.getClient().getId().toString());
+            if (isBlacklisted) {
+                account.setStatus(AccountStatus.BLOCKED);
+                transaction.setStatus(TransactionStatus.REJECTED);
+                accountRepository.save(account);
+                transactionRepository.save(transaction);
+                return transactionMapper.toTransactionDto(transaction);
+            }
+        }
+
+        int rejectedCount = transactionRepository.countByAccountAndStatus(account, TransactionStatus.REJECTED);
+        if (rejectedCount + 1 > limit) {
+            account.setStatus(AccountStatus.ARRESTED);
+        }
+        transaction.setStatus(TransactionStatus.REJECTED);
+        accountRepository.save(account);
+        transactionRepository.save(transaction);
+
+        return transactionMapper.toTransactionDto(transaction);
     }
 
     @LogDataSourceError
