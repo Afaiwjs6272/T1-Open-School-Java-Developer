@@ -8,12 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802/storage_v2/_src_/database/t1_java.5LJcUQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b2e84f97-62cb-4f06-8065-62d6c33f0802/storage_v2/_src_/database/t1_java.5LJcUQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/repository/DataSourceErrorLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/repository/DataSourceErrorLogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/aop/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/aop/LogAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/aop/MetricAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/aop/MetricAspect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/account/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/account/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,16 +26,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="task-1" />
+        <entry key="$PROJECT_DIR$" value="task-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,10 +75,18 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;postgresql&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\garte\T1-Open-School-Java-Developer\src\main\resources\db\migration" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MainApplication">
     <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="T1-Open-School-Java-Developer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ukhanov.t1.java.MainApplication" />
@@ -84,6 +94,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -107,6 +150,11 @@
       <workItem from="1748171248999" duration="177000" />
       <workItem from="1748175588113" duration="20000" />
       <workItem from="1748183457849" duration="1019000" />
+      <workItem from="1748362140054" duration="3024000" />
+      <workItem from="1748429394161" duration="5720000" />
+      <workItem from="1748455283129" duration="3697000" />
+      <workItem from="1748500119955" duration="255000" />
+      <workItem from="1748523740187" duration="3065000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1747940713534</created>
