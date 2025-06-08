@@ -57,6 +57,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>ru.t1.java</groupId>
+            <artifactId>Aspects-starter</artifactId>
+            <version>0.0.4</version>
+        </dependency>
     </dependencies>
 
     <build>

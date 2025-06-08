@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.ukhanov.t1.java.aop.annotation.LogDataSourceError;
-import ru.ukhanov.t1.java.aop.annotation.Metric;
+import ru.ukhanov.t1.java.aspects.annotation.LogDataSourceError;
+import ru.ukhanov.t1.java.aspects.annotation.Metric;
 import ru.ukhanov.t1.java.dto.TransactionDto;
 import ru.ukhanov.t1.java.exception.TransactionNotFoundException;
 import ru.ukhanov.t1.java.mapper.TransactionMapper;
@@ -25,7 +25,7 @@ public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
     private final AccountRepository accountRepository;
-    private ClientBlackList list;
+    private final ClientBlackList list;
 
     @Value("${transactions.reject.limit}")
     private int limit;
@@ -45,15 +45,15 @@ public class TransactionServiceImpl implements TransactionService {
                 transactionRepository.save(transaction);
                 return transactionMapper.toTransactionDto(transaction);
             }
-        }
 
-        int rejectedCount = transactionRepository.countByAccountAndStatus(account, TransactionStatus.REJECTED);
-        if (rejectedCount + 1 > limit) {
-            account.setStatus(AccountStatus.ARRESTED);
+            int rejectedCount = transactionRepository.countByAccountAndStatus(account, TransactionStatus.REJECTED);
+            if (rejectedCount + 1 > limit) {
+                account.setStatus(AccountStatus.ARRESTED);
+            }
+            transaction.setStatus(TransactionStatus.REJECTED);
+            accountRepository.save(account);
+            transactionRepository.save(transaction);
         }
-        transaction.setStatus(TransactionStatus.REJECTED);
-        accountRepository.save(account);
-        transactionRepository.save(transaction);
 
         return transactionMapper.toTransactionDto(transaction);
     }
@@ -87,7 +87,6 @@ public class TransactionServiceImpl implements TransactionService {
         return result;
     }
 
-    @LogDataSourceError
     @Metric
     @Override
     public TransactionDto getById(Long id) {

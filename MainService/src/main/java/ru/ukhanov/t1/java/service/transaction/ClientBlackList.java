@@ -1,14 +1,12 @@
 package ru.ukhanov.t1.java.service.transaction;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import ru.ukhanov.t1.java.dto.BlacklistStatusResponse;
 import ru.ukhanov.t1.java.util.JwtUtil;
-
 @RequiredArgsConstructor
 @Service
 public class ClientBlackList {
