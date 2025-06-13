@@ -1,0 +1,24 @@
+aspects:
+  kafka:
+    bootstrap-servers: localhost:9092
+    topic: t1_demo_metrics
+    group-id: metrics-starter-group
+    enable: true
+
+metric:
+  time-limit-ms: 2000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/t1_java
+    username: artem
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
