@@ -5,41 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c90bee0-737b-437f-86a9-34b96f6249e5" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/aspects-starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnblockService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/aop/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/aspect/LogAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/aop/MetricAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/aspect/MetricAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/aop/annotation/LodDatasourceError.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/annotation/LodDatasourceError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/aop/annotation/LogDataSourceError.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/annotation/LogDataSourceError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/aop/annotation/Metric.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/annotation/Metric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/config/KafkaConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/config/KafkaTopicsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/config/KafkaTopicsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/model/MetricsError/MetricsError.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/entity/MetricsError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/model/dataSourceErrorLog/DataSourceErrorLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/entity/DataSourceErrorLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/model/timeLimitExceedLog/TimeLimitExceedLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/entity/TimeLimitExceedLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/repository/DataSourceErrorLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/repository/DataSourceErrorLogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/repository/MetricsErrorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/repository/MetricsErrorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/repository/TimeLimitExceedLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/aspects-starter/src/main/java/ru/ukhanov/t1/java/aspects/repository/TimeLimitExceedLogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/service/account/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/service/account/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/service/transaction/ClientBlackList.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/service/transaction/ClientBlackList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransactionService/src/main/java/ru/ukhanov/t1/java/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransactionService/src/main/java/ru/ukhanov/t1/java/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/aop/LogAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/aop/MetricAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/aop/annotation/LodDatasourceError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/aop/annotation/LogDataSourceError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/aop/annotation/Metric.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/config/KafkaTopicsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/config/KafkaTopicsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/model/MetricsError/MetricsError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/model/dataSourceErrorLog/DataSourceErrorLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/model/timeLimitExceedLog/TimeLimitExceedLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/repository/DataSourceErrorLogRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/repository/MetricsErrorRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/repository/TimeLimitExceedLogRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/service/account/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/service/account/AccountServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T1-Open-School-Java-Developer/ru/ukhanov/t1/java/service/transaction/TransactionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/model/clinet/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/model/clinet/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/repository/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/java/ru/ukhanov/t1/java/repository/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MainService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +82,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;798eae30b122973927753686a4000a5a&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;cf296546145299e59ec0b551abaf838e&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -153,7 +127,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MainApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="MainApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="MainService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ukhanov.t1.java.MainApplication" />
@@ -167,7 +141,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+    <configuration name="MainApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="MainService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ukhanov.t1.java.MainApplication" />
       <extension name="coverage">
@@ -206,7 +180,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="MainApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="MainService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ukhanov.t1.java.MainApplication" />
       <extension name="coverage">
@@ -287,11 +261,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Spring Boot.MainApplication (1)" />
         <item itemvalue="Spring Boot.MainApplication " />
         <item itemvalue="Spring Boot.MainApplication " />
         <item itemvalue="Spring Boot.MainApplication (2)" />
-        <item itemvalue="Spring Boot.MainApplication " />
       </list>
     </recent_temporary>
   </component>
@@ -357,6 +331,19 @@
       <workItem from="1749297002676" duration="2678000" />
       <workItem from="1749307983668" duration="1389000" />
       <workItem from="1749378217511" duration="2211000" />
+      <workItem from="1749478232449" duration="603000" />
+      <workItem from="1749480071061" duration="54000" />
+      <workItem from="1749480146658" duration="639000" />
+      <workItem from="1749549811494" duration="1248000" />
+      <workItem from="1749551143941" duration="596000" />
+      <workItem from="1749580028976" duration="1659000" />
+      <workItem from="1749648883275" duration="3495000" />
+      <workItem from="1749660155917" duration="566000" />
+      <workItem from="1749718068537" duration="1611000" />
+      <workItem from="1749736144211" duration="1176000" />
+      <workItem from="1749746304740" duration="2264000" />
+      <workItem from="1749804386583" duration="1535000" />
+      <workItem from="1749807268654" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1747940713534</created>
