@@ -50,8 +50,12 @@ public class CachedAspect {
             return cachedValue;
         }
         Object result = pjp.proceed();
-        log.info("Putted object - {} with key - {} in cache", result, key);
-        cache.put(key, result);
+        if (result != null) {
+            cache.put(key, result);
+            log.info("Putted object - {} with key - {} in cache", result, key);
+        } else {
+            log.warn("Result is null, skipping cache for key = {}", key);
+        }
         return result;
     }
 

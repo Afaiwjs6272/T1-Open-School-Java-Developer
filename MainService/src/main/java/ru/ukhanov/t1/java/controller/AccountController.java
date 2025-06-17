@@ -18,7 +18,7 @@ public class AccountController {
     private final AccountService accountService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<AccountDto> getAccountById(@PathVariable Long id) {
+    public ResponseEntity<AccountDto> getAccountById(@PathVariable("id") Long id) {
         log.info("GET /account/{} called", id);
         AccountDto dto = accountService.getById(id);
         log.debug("Found account: {}", dto);
@@ -45,7 +45,7 @@ public class AccountController {
 
     @PatchMapping("/{id}")
     public ResponseEntity<AccountDto> updateAccount(
-            @PathVariable Long id,
+            @PathVariable("id") Long id,
             @RequestBody AccountDto accountDto) {
         log.info("PATCH /account/{} called", id);
         AccountDto updated = accountService.updateAccount(id, accountDto);
@@ -54,7 +54,7 @@ public class AccountController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteAccount(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteAccount(@PathVariable("id") Long id) {
         log.info("DELETE /account/{} called", id);
         accountService.deleteAccount(id);
         log.info("Account with id={} deleted", id);

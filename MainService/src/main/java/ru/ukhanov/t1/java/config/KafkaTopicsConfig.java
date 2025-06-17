@@ -28,6 +28,14 @@ public class KafkaTopicsConfig {
     }
 
     @Bean
+    public NewTopic resultTopic() {
+        return TopicBuilder.name("t1_demo_transaction_result")
+                .partitions(3)
+                .replicas(1)
+                .build();
+    }
+
+    @Bean
     public KafkaAdmin kafkaAdmin() {
         Map<String, Object> configs = new HashMap<>();
         configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);

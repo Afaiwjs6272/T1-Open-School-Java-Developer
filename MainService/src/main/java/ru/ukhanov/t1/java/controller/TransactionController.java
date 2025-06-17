@@ -17,7 +17,7 @@ public class TransactionController {
     private final TransactionService transactionService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<TransactionDto> getTransactionById(@PathVariable Long id) {
+    public ResponseEntity<TransactionDto> getTransactionById(@PathVariable("id") Long id) {
         log.info("GET /transaction/{} called", id);
         TransactionDto dto = transactionService.getById(id);
         log.debug("Found transaction: {}", dto);
@@ -44,7 +44,7 @@ public class TransactionController {
 
     @PatchMapping("/{id}")
     public ResponseEntity<TransactionDto> updateTransaction(
-            @PathVariable Long id,
+            @PathVariable("id") Long id,
             @RequestBody TransactionDto transactionDto) {
         log.info("PATCH /transaction/{} called", id);
         TransactionDto updated = transactionService.updateTransaction(id, transactionDto);
@@ -53,7 +53,7 @@ public class TransactionController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTransaction(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteTransaction(@PathVariable("id") Long id) {
         log.info("DELETE /transaction/{} called", id);
         transactionService.deleteTransaction(id);
         log.info("Transaction with id={} deleted", id);

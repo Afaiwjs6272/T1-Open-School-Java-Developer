@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.ukhanov.t1.java.model.clinet.enums.ClientStatus;
 
 @Data
 @NoArgsConstructor
@@ -26,4 +27,7 @@ public class Client {
 
     @Column(name = "client_id")
     private Long clientID;
+
+    @Column(name = "status")
+    private ClientStatus status;
 }

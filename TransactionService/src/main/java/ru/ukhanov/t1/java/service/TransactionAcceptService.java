@@ -31,7 +31,7 @@ public class TransactionAcceptService {
                     dto.clientId(),
                     dto.accountId(),
                     dto.transactionId(),
-                    ru.ukhanov.t1.java.dto.enums.TransactionStatus.BLOCKED
+                    ru.ukhanov.t1.java.dto.enums.TransactionsStatus.BLOCKED
             );
             kafkaTemplate.send("t1_demo_transaction_result", message);
             log.info("Message - {} sent with status BLOCKED", message);
@@ -42,7 +42,7 @@ public class TransactionAcceptService {
                     dto.clientId(),
                     dto.accountId(),
                     dto.transactionId(),
-                    ru.ukhanov.t1.java.dto.enums.TransactionStatus.REJECTED
+                    ru.ukhanov.t1.java.dto.enums.TransactionsStatus.REJECTED
             );
             kafkaTemplate.send("t1_demo_transaction_result", message);
             log.info("Message - {} sent with status REJECTED", message);
@@ -52,7 +52,7 @@ public class TransactionAcceptService {
                 dto.clientId(),
                 dto.accountId(),
                 dto.transactionId(),
-                ru.ukhanov.t1.java.dto.enums.TransactionStatus.ACCEPTED
+                ru.ukhanov.t1.java.dto.enums.TransactionsStatus.ACCEPTED
         );
         kafkaTemplate.send("t1_demo_transaction_result", message);
         log.info("Message - {} sent with status ACCEPTED", message);
