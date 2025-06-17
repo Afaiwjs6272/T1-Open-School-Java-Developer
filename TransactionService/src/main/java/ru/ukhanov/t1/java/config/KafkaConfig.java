@@ -12,7 +12,7 @@ import ru.ukhanov.t1.java.dto.AcceptDto;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
+@Configuration("kafka-transaction")
 public class KafkaConfig {
 
     @Bean

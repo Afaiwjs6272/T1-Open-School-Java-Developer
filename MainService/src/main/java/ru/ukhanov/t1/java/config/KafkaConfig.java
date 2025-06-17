@@ -13,7 +13,7 @@ import org.springframework.kafka.core.ProducerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
+@Configuration("kafka-main")
 @Slf4j
 public class KafkaConfig {
     @Value("${spring.kafka.bootstrap-servers}")

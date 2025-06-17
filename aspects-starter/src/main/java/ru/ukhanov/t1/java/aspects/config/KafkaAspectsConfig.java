@@ -3,7 +3,7 @@ package ru.ukhanov.t1.java.aspects.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@Configuration("kafka-aspects")
 @ConfigurationProperties(prefix = "aspects.kafka")
 public class KafkaAspectsConfig {
     private String bootstrapServers;
