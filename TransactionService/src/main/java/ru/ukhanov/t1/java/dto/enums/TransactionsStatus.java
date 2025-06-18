@@ -1,6 +1,6 @@
 package ru.ukhanov.t1.java.dto.enums;
 
-public enum TransactionStatus {
+public enum TransactionsStatus {
     ACCEPTED,
     REJECTED,
     BLOCKED,
