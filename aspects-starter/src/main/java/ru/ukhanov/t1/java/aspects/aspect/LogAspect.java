@@ -25,7 +25,6 @@ public class LogAspect {
 
     @Value("${spring.kafka.metrics.topic:t1_demo_metrics}")
     private String topic;
-    private final String errorType = "DATA_SOURCE";
 
 
     @Around("@annotation(ru.ukhanov.t1.java.aspects.annotation.LogDataSourceError)")
@@ -55,7 +54,7 @@ public class LogAspect {
             String message = String.format("Data source method accessed: %s", methodName);
             Message<String> kafkaMessage = MessageBuilder
                     .withPayload(message)
-                    .setHeader("errorType", errorType)
+                    .setHeader("errorType", "DATA_SOURCE")
                     .build();
             log.info("Message - {} sent to topic - {}", message, topic);
             kafkaTemplate.send(topic, kafkaMessage.toString()).get();

@@ -28,7 +28,6 @@ public class MetricAspect {
     private long maxExecutionTime;
     @Value("${spring.kafka.metrics.topic:t1_demo_metrics}")
     private String topic;
-    private final String errorType = "METRICS";
 
     @Around("@annotation(ru.ukhanov.t1.java.aspects.annotation.Metric)")
     public Object measureExecutionTime(ProceedingJoinPoint pjp) throws Throwable {
@@ -52,23 +51,23 @@ public class MetricAspect {
                     "Method %s exceeded time limit. Execution time: %d ms, limit: %d ms",
                     methodName, timeExecuted, maxExecutionTime
             );
+            sendMessageToKafka(topic, message,
+                    endTime, pjp.getSignature().toShortString());
+
             TimeLimitExceedLog limitLog = new TimeLimitExceedLog();
             limitLog.setMethodSignature(pjp.getSignature().getName());
             limitLog.setExecutionTime(timeExecuted);
             repository.save(limitLog);
-
-            sendMessageToKafka(topic, errorType, message,
-                    endTime, pjp.getSignature().toShortString());
         }
         return result;
     }
 
-    private void sendMessageToKafka(String topic,String errorType, String message,
+    private void sendMessageToKafka(String topic, String message,
                                     long executionTime, String signature) {
         try {
             Message<String> kafkaMessage = MessageBuilder
                     .withPayload(message)
-                    .setHeader("errorType", errorType)
+                    .setHeader("errorType", "METRICS")
                     .build();
 
             log.info("Message {} sent to topic {}", kafkaMessage, topic);
