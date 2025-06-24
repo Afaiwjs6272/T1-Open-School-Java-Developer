@@ -20,6 +20,7 @@
         <module>MainService</module>
         <module>TransactionService</module>
         <module>aspects-starter</module>
+        <module>UnblockService</module>
     </modules>
 
     <properties>
