@@ -3,10 +3,8 @@ package ru.ukhanov.t1.java.service.account;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.ukhanov.t1.java.aop.annotation.Cached;
-import ru.ukhanov.t1.java.aop.annotation.LodDatasourceError;
-import ru.ukhanov.t1.java.aop.annotation.LogDataSourceError;
-import ru.ukhanov.t1.java.aop.annotation.Metric;
+import ru.ukhanov.t1.java.aspects.annotation.LogDataSourceError;
+import ru.ukhanov.t1.java.aspects.annotation.Metric;
 import ru.ukhanov.t1.java.dto.AccountDto;
 import ru.ukhanov.t1.java.exception.AccountNotFoundException;
 import ru.ukhanov.t1.java.mapper.AccountMapper;
@@ -64,8 +62,6 @@ public class AccountServiceImpl implements AccountService {
         return result;
     }
 
-    @LodDatasourceError
-    @LogDataSourceError
     @Metric
     @Override
     public AccountDto getById(Long id) {
